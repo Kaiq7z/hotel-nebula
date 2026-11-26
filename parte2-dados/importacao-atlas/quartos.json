@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "qrt101",
+    "numero": "101",
+    "tipo": "standard",
+    "categoria": "economico",
+    "capacidade_max": 2,
+    "preco_diaria": 250,
+    "comodidades": [
+      "wifi",
+      "tv"
+    ],
+    "caracteristicas": {
+      "vista": "jardim",
+      "banheira": false
+    }
+  },
+  {
+    "_id": "qrt201",
+    "numero": "201",
+    "tipo": "superior",
+    "categoria": "conforto",
+    "capacidade_max": 2,
+    "preco_diaria": 450,
+    "comodidades": [
+      "wifi",
+      "tv",
+      "frigobar"
+    ],
+    "caracteristicas": {
+      "vista": "mar",
+      "banheira": false
+    }
+  },
+  {
+    "_id": "qrt301",
+    "numero": "301",
+    "tipo": "suite",
+    "categoria": "luxo",
+    "capacidade_max": 3,
+    "preco_diaria": 700,
+    "comodidades": [
+      "wifi",
+      "tv",
+      "frigobar",
+      "cofre"
+    ],
+    "caracteristicas": {
+      "vista": "mar",
+      "banheira": true,
+      "varanda": true
+    }
+  }
+]

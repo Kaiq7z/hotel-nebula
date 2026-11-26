@@ -1,0 +1,39 @@
+[
+  {
+    "_id": "hsp001",
+    "nome": "Carlos Andrade",
+    "email": "carlos@example.com",
+    "telefone": "11900000001",
+    "endereco": {
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    "preferencias": {
+      "cama": "casal",
+      "andar_alto": true
+    }
+  },
+  {
+    "_id": "hsp002",
+    "nome": "Ana Souza",
+    "email": "ana@example.com",
+    "telefone": "11900000002",
+    "endereco": {
+      "cidade": "Campinas",
+      "estado": "SP"
+    },
+    "preferencias": {
+      "fumante": false
+    }
+  },
+  {
+    "_id": "hsp003",
+    "nome": "Bruno Lima",
+    "email": "bruno@example.com",
+    "telefone": "21900000003",
+    "endereco": {
+      "cidade": "Rio de Janeiro",
+      "estado": "RJ"
+    }
+  }
+]

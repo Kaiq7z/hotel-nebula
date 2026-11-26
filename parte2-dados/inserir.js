@@ -1,0 +1,488 @@
+// Parte 2 - Criação das coleções e inserção dos dados
+// Executar uma vez, em um banco vazio. Valores em reais.
+
+db = db.getSiblingDB("hotel_nebula_atividade");
+
+db.createCollection("hospedes");
+db.createCollection("quartos");
+db.createCollection("funcionarios");
+db.createCollection("servicos");
+db.createCollection("reservas");
+db.createCollection("hospedagens");
+db.createCollection("pagamentos");
+db.createCollection("feedbacks");
+
+// hospedes
+db.hospedes.insertMany([
+  {
+    "_id": "hsp001",
+    "nome": "Carlos Andrade",
+    "email": "carlos@example.com",
+    "telefone": "11900000001",
+    "endereco": {
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    "preferencias": {
+      "cama": "casal",
+      "andar_alto": true
+    }
+  },
+  {
+    "_id": "hsp002",
+    "nome": "Ana Souza",
+    "email": "ana@example.com",
+    "telefone": "11900000002",
+    "endereco": {
+      "cidade": "Campinas",
+      "estado": "SP"
+    },
+    "preferencias": {
+      "fumante": false
+    }
+  },
+  {
+    "_id": "hsp003",
+    "nome": "Bruno Lima",
+    "email": "bruno@example.com",
+    "telefone": "21900000003",
+    "endereco": {
+      "cidade": "Rio de Janeiro",
+      "estado": "RJ"
+    }
+  }
+]);
+
+// quartos
+db.quartos.insertMany([
+  {
+    "_id": "qrt101",
+    "numero": "101",
+    "tipo": "standard",
+    "categoria": "economico",
+    "capacidade_max": 2,
+    "preco_diaria": 250,
+    "comodidades": [
+      "wifi",
+      "tv"
+    ],
+    "caracteristicas": {
+      "vista": "jardim",
+      "banheira": false
+    }
+  },
+  {
+    "_id": "qrt201",
+    "numero": "201",
+    "tipo": "superior",
+    "categoria": "conforto",
+    "capacidade_max": 2,
+    "preco_diaria": 450,
+    "comodidades": [
+      "wifi",
+      "tv",
+      "frigobar"
+    ],
+    "caracteristicas": {
+      "vista": "mar",
+      "banheira": false
+    }
+  },
+  {
+    "_id": "qrt301",
+    "numero": "301",
+    "tipo": "suite",
+    "categoria": "luxo",
+    "capacidade_max": 3,
+    "preco_diaria": 700,
+    "comodidades": [
+      "wifi",
+      "tv",
+      "frigobar",
+      "cofre"
+    ],
+    "caracteristicas": {
+      "vista": "mar",
+      "banheira": true,
+      "varanda": true
+    }
+  }
+]);
+
+// funcionarios
+db.funcionarios.insertMany([
+  {
+    "_id": "fnc001",
+    "nome": "Juliana Martins",
+    "cargo": "recepcionista",
+    "turno": {
+      "entrada": "07:00",
+      "saida": "15:00"
+    }
+  },
+  {
+    "_id": "fnc002",
+    "nome": "Pedro Alves",
+    "cargo": "recepcionista",
+    "turno": {
+      "entrada": "15:00",
+      "saida": "23:00"
+    }
+  }
+]);
+
+// servicos
+db.servicos.insertMany([
+  {
+    "_id": "svc001",
+    "nome": "Café da manhã",
+    "preco": 45,
+    "unidade": "pessoa",
+    "horario": {
+      "inicio": "06:30",
+      "fim": "10:30"
+    }
+  },
+  {
+    "_id": "svc002",
+    "nome": "Lavanderia",
+    "preco": 80,
+    "unidade": "cesto"
+  }
+]);
+
+// reservas
+db.reservas.insertMany([
+  {
+    "_id": "rsv001",
+    "hospede_id": "hsp001",
+    "quarto_id": "qrt101",
+    "hospede_snapshot": {
+      "nome": "Carlos Andrade",
+      "email": "carlos@example.com"
+    },
+    "quarto_snapshot": {
+      "numero": "101",
+      "tipo": "standard",
+      "preco_diaria": 250
+    },
+    "data_checkin": ISODate("2025-04-10T00:00:00.000Z"),
+    "data_checkout": ISODate("2025-04-12T00:00:00.000Z"),
+    "num_noites": 2,
+    "num_hospedes": 2,
+    "valor_total": 500,
+    "status": "concluida"
+  },
+  {
+    "_id": "rsv002",
+    "hospede_id": "hsp002",
+    "quarto_id": "qrt201",
+    "hospede_snapshot": {
+      "nome": "Ana Souza",
+      "email": "ana@example.com"
+    },
+    "quarto_snapshot": {
+      "numero": "201",
+      "tipo": "superior",
+      "preco_diaria": 450
+    },
+    "data_checkin": ISODate("2025-04-15T00:00:00.000Z"),
+    "data_checkout": ISODate("2025-04-18T00:00:00.000Z"),
+    "num_noites": 3,
+    "num_hospedes": 2,
+    "valor_total": 1350,
+    "status": "concluida"
+  },
+  {
+    "_id": "rsv003",
+    "hospede_id": "hsp001",
+    "quarto_id": "qrt301",
+    "hospede_snapshot": {
+      "nome": "Carlos Andrade",
+      "email": "carlos@example.com"
+    },
+    "quarto_snapshot": {
+      "numero": "301",
+      "tipo": "suite",
+      "preco_diaria": 700
+    },
+    "data_checkin": ISODate("2025-05-03T00:00:00.000Z"),
+    "data_checkout": ISODate("2025-05-05T00:00:00.000Z"),
+    "num_noites": 2,
+    "num_hospedes": 2,
+    "valor_total": 1400,
+    "status": "concluida"
+  },
+  {
+    "_id": "rsv004",
+    "hospede_id": "hsp002",
+    "quarto_id": "qrt101",
+    "hospede_snapshot": {
+      "nome": "Ana Souza",
+      "email": "ana@example.com"
+    },
+    "quarto_snapshot": {
+      "numero": "101",
+      "tipo": "standard",
+      "preco_diaria": 250
+    },
+    "data_checkin": ISODate("2025-05-10T00:00:00.000Z"),
+    "data_checkout": ISODate("2025-05-11T00:00:00.000Z"),
+    "num_noites": 1,
+    "num_hospedes": 2,
+    "valor_total": 250,
+    "status": "concluida"
+  },
+  {
+    "_id": "rsv005",
+    "hospede_id": "hsp003",
+    "quarto_id": "qrt201",
+    "hospede_snapshot": {
+      "nome": "Bruno Lima",
+      "email": "bruno@example.com"
+    },
+    "quarto_snapshot": {
+      "numero": "201",
+      "tipo": "superior",
+      "preco_diaria": 450
+    },
+    "data_checkin": ISODate("2025-04-20T00:00:00.000Z"),
+    "data_checkout": ISODate("2025-04-22T00:00:00.000Z"),
+    "num_noites": 2,
+    "num_hospedes": 2,
+    "valor_total": 900,
+    "status": "cancelada"
+  },
+  {
+    "_id": "rsv006",
+    "hospede_id": "hsp003",
+    "quarto_id": "qrt301",
+    "hospede_snapshot": {
+      "nome": "Bruno Lima",
+      "email": "bruno@example.com"
+    },
+    "quarto_snapshot": {
+      "numero": "301",
+      "tipo": "suite",
+      "preco_diaria": 700
+    },
+    "data_checkin": ISODate("2025-06-08T00:00:00.000Z"),
+    "data_checkout": ISODate("2025-06-10T00:00:00.000Z"),
+    "num_noites": 2,
+    "num_hospedes": 2,
+    "valor_total": 1400,
+    "status": "confirmada"
+  }
+]);
+
+// hospedagens
+db.hospedagens.insertMany([
+  {
+    "_id": "hpd001",
+    "reserva_id": "rsv001",
+    "hospede_id": "hsp001",
+    "quarto_id": "qrt101",
+    "checkin_real": ISODate("2025-04-10T14:00:00.000Z"),
+    "checkout_real": ISODate("2025-04-12T11:00:00.000Z"),
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [
+      {
+        "servico_id": "svc001",
+        "nome": "Café da manhã",
+        "quantidade": 1,
+        "preco_unitario": 45,
+        "total": 45,
+        "data": ISODate("2025-04-11T08:00:00.000Z")
+      }
+    ],
+    "total_diarias": 500,
+    "total_servicos": 45,
+    "total_geral": 545
+  },
+  {
+    "_id": "hpd002",
+    "reserva_id": "rsv002",
+    "hospede_id": "hsp002",
+    "quarto_id": "qrt201",
+    "checkin_real": ISODate("2025-04-15T14:00:00.000Z"),
+    "checkout_real": ISODate("2025-04-18T11:00:00.000Z"),
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [
+      {
+        "servico_id": "svc002",
+        "nome": "Lavanderia",
+        "quantidade": 1,
+        "preco_unitario": 80,
+        "total": 80,
+        "data": ISODate("2025-04-16T10:00:00.000Z")
+      }
+    ],
+    "total_diarias": 1350,
+    "total_servicos": 80,
+    "total_geral": 1430
+  },
+  {
+    "_id": "hpd003",
+    "reserva_id": "rsv003",
+    "hospede_id": "hsp001",
+    "quarto_id": "qrt301",
+    "checkin_real": ISODate("2025-05-03T14:00:00.000Z"),
+    "checkout_real": ISODate("2025-05-05T11:00:00.000Z"),
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [
+      {
+        "servico_id": "svc001",
+        "nome": "Café da manhã",
+        "quantidade": 2,
+        "preco_unitario": 45,
+        "total": 90,
+        "data": ISODate("2025-05-04T08:00:00.000Z")
+      }
+    ],
+    "total_diarias": 1400,
+    "total_servicos": 90,
+    "total_geral": 1490
+  },
+  {
+    "_id": "hpd004",
+    "reserva_id": "rsv004",
+    "hospede_id": "hsp002",
+    "quarto_id": "qrt101",
+    "checkin_real": ISODate("2025-05-10T14:00:00.000Z"),
+    "checkout_real": ISODate("2025-05-11T11:00:00.000Z"),
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [],
+    "total_diarias": 250,
+    "total_servicos": 0,
+    "total_geral": 250
+  }
+]);
+
+// pagamentos
+db.pagamentos.insertMany([
+  {
+    "_id": "pgt001",
+    "hospedagem_id": "hpd001",
+    "reserva_id": "rsv001",
+    "hospede_id": "hsp001",
+    "valor_total": 545,
+    "status": "pago",
+    "data_pagamento": ISODate("2025-04-12T10:50:00.000Z"),
+    "parcelas": [
+      {
+        "metodo": "pix",
+        "valor": 545,
+        "status": "aprovado"
+      }
+    ]
+  },
+  {
+    "_id": "pgt002",
+    "hospedagem_id": "hpd002",
+    "reserva_id": "rsv002",
+    "hospede_id": "hsp002",
+    "valor_total": 1430,
+    "status": "pago",
+    "data_pagamento": ISODate("2025-04-18T10:50:00.000Z"),
+    "parcelas": [
+      {
+        "metodo": "cartao_credito",
+        "valor": 1000,
+        "status": "aprovado"
+      },
+      {
+        "metodo": "pix",
+        "valor": 430,
+        "status": "aprovado"
+      }
+    ]
+  },
+  {
+    "_id": "pgt003",
+    "hospedagem_id": "hpd003",
+    "reserva_id": "rsv003",
+    "hospede_id": "hsp001",
+    "valor_total": 1490,
+    "status": "pago",
+    "data_pagamento": ISODate("2025-05-05T10:50:00.000Z"),
+    "parcelas": [
+      {
+        "metodo": "pix",
+        "valor": 1490,
+        "status": "aprovado"
+      }
+    ]
+  },
+  {
+    "_id": "pgt004",
+    "hospedagem_id": "hpd004",
+    "reserva_id": "rsv004",
+    "hospede_id": "hsp002",
+    "valor_total": 250,
+    "status": "pago",
+    "data_pagamento": ISODate("2025-05-11T10:50:00.000Z"),
+    "parcelas": [
+      {
+        "metodo": "pix",
+        "valor": 250,
+        "status": "aprovado"
+      }
+    ]
+  }
+]);
+
+// feedbacks
+db.feedbacks.insertMany([
+  {
+    "_id": "fdb001",
+    "hospede_id": "hsp001",
+    "hospedagem_id": "hpd001",
+    "quarto_id": "qrt101",
+    "data_avaliacao": ISODate("2025-04-12T18:00:00.000Z"),
+    "nota_geral": 4,
+    "notas_detalhadas": {
+      "limpeza": 5,
+      "atendimento": 4
+    },
+    "comentario": "Gostei do quarto e do atendimento.",
+    "resposta_hotel": {
+      "texto": "Obrigado pela avaliação!",
+      "data": ISODate("2025-04-13T10:00:00.000Z"),
+      "funcionario_id": "fnc001"
+    }
+  },
+  {
+    "_id": "fdb002",
+    "hospede_id": "hsp002",
+    "hospedagem_id": "hpd002",
+    "quarto_id": "qrt201",
+    "data_avaliacao": ISODate("2025-04-18T18:00:00.000Z"),
+    "nota_geral": 5,
+    "notas_detalhadas": {
+      "limpeza": 5,
+      "atendimento": 5
+    },
+    "comentario": "O hotel é bem confortável."
+  },
+  {
+    "_id": "fdb003",
+    "hospede_id": "hsp001",
+    "hospedagem_id": "hpd003",
+    "quarto_id": "qrt301",
+    "data_avaliacao": ISODate("2025-05-05T18:00:00.000Z"),
+    "nota_geral": 5,
+    "notas_detalhadas": {
+      "limpeza": 5,
+      "atendimento": 5
+    },
+    "comentario": "A suíte tem uma vista muito bonita."
+  }
+]);

@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "fnc001",
+    "nome": "Juliana Martins",
+    "cargo": "recepcionista",
+    "turno": {
+      "entrada": "07:00",
+      "saida": "15:00"
+    }
+  },
+  {
+    "_id": "fnc002",
+    "nome": "Pedro Alves",
+    "cargo": "recepcionista",
+    "turno": {
+      "entrada": "15:00",
+      "saida": "23:00"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "svc001",
+    "nome": "Café da manhã",
+    "preco": 45,
+    "unidade": "pessoa",
+    "horario": {
+      "inicio": "06:30",
+      "fim": "10:30"
+    }
+  },
+  {
+    "_id": "svc002",
+    "nome": "Lavanderia",
+    "preco": 80,
+    "unidade": "cesto"
+  }
+]

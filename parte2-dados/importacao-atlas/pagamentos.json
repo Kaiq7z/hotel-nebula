@@ -1,0 +1,79 @@
+[
+  {
+    "_id": "pgt001",
+    "hospedagem_id": "hpd001",
+    "reserva_id": "rsv001",
+    "hospede_id": "hsp001",
+    "valor_total": 545,
+    "status": "pago",
+    "data_pagamento": {
+      "$date": "2025-04-12T10:50:00.000Z"
+    },
+    "parcelas": [
+      {
+        "metodo": "pix",
+        "valor": 545,
+        "status": "aprovado"
+      }
+    ]
+  },
+  {
+    "_id": "pgt002",
+    "hospedagem_id": "hpd002",
+    "reserva_id": "rsv002",
+    "hospede_id": "hsp002",
+    "valor_total": 1430,
+    "status": "pago",
+    "data_pagamento": {
+      "$date": "2025-04-18T10:50:00.000Z"
+    },
+    "parcelas": [
+      {
+        "metodo": "cartao_credito",
+        "valor": 1000,
+        "status": "aprovado"
+      },
+      {
+        "metodo": "pix",
+        "valor": 430,
+        "status": "aprovado"
+      }
+    ]
+  },
+  {
+    "_id": "pgt003",
+    "hospedagem_id": "hpd003",
+    "reserva_id": "rsv003",
+    "hospede_id": "hsp001",
+    "valor_total": 1490,
+    "status": "pago",
+    "data_pagamento": {
+      "$date": "2025-05-05T10:50:00.000Z"
+    },
+    "parcelas": [
+      {
+        "metodo": "pix",
+        "valor": 1490,
+        "status": "aprovado"
+      }
+    ]
+  },
+  {
+    "_id": "pgt004",
+    "hospedagem_id": "hpd004",
+    "reserva_id": "rsv004",
+    "hospede_id": "hsp002",
+    "valor_total": 250,
+    "status": "pago",
+    "data_pagamento": {
+      "$date": "2025-05-11T10:50:00.000Z"
+    },
+    "parcelas": [
+      {
+        "metodo": "pix",
+        "valor": 250,
+        "status": "aprovado"
+      }
+    ]
+  }
+]

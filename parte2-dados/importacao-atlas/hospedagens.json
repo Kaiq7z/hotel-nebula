@@ -1,0 +1,111 @@
+[
+  {
+    "_id": "hpd001",
+    "reserva_id": "rsv001",
+    "hospede_id": "hsp001",
+    "quarto_id": "qrt101",
+    "checkin_real": {
+      "$date": "2025-04-10T14:00:00.000Z"
+    },
+    "checkout_real": {
+      "$date": "2025-04-12T11:00:00.000Z"
+    },
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [
+      {
+        "servico_id": "svc001",
+        "nome": "Café da manhã",
+        "quantidade": 1,
+        "preco_unitario": 45,
+        "total": 45,
+        "data": {
+          "$date": "2025-04-11T08:00:00.000Z"
+        }
+      }
+    ],
+    "total_diarias": 500,
+    "total_servicos": 45,
+    "total_geral": 545
+  },
+  {
+    "_id": "hpd002",
+    "reserva_id": "rsv002",
+    "hospede_id": "hsp002",
+    "quarto_id": "qrt201",
+    "checkin_real": {
+      "$date": "2025-04-15T14:00:00.000Z"
+    },
+    "checkout_real": {
+      "$date": "2025-04-18T11:00:00.000Z"
+    },
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [
+      {
+        "servico_id": "svc002",
+        "nome": "Lavanderia",
+        "quantidade": 1,
+        "preco_unitario": 80,
+        "total": 80,
+        "data": {
+          "$date": "2025-04-16T10:00:00.000Z"
+        }
+      }
+    ],
+    "total_diarias": 1350,
+    "total_servicos": 80,
+    "total_geral": 1430
+  },
+  {
+    "_id": "hpd003",
+    "reserva_id": "rsv003",
+    "hospede_id": "hsp001",
+    "quarto_id": "qrt301",
+    "checkin_real": {
+      "$date": "2025-05-03T14:00:00.000Z"
+    },
+    "checkout_real": {
+      "$date": "2025-05-05T11:00:00.000Z"
+    },
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [
+      {
+        "servico_id": "svc001",
+        "nome": "Café da manhã",
+        "quantidade": 2,
+        "preco_unitario": 45,
+        "total": 90,
+        "data": {
+          "$date": "2025-05-04T08:00:00.000Z"
+        }
+      }
+    ],
+    "total_diarias": 1400,
+    "total_servicos": 90,
+    "total_geral": 1490
+  },
+  {
+    "_id": "hpd004",
+    "reserva_id": "rsv004",
+    "hospede_id": "hsp002",
+    "quarto_id": "qrt101",
+    "checkin_real": {
+      "$date": "2025-05-10T14:00:00.000Z"
+    },
+    "checkout_real": {
+      "$date": "2025-05-11T11:00:00.000Z"
+    },
+    "status": "encerrada",
+    "funcionario_checkin_id": "fnc001",
+    "funcionario_checkout_id": "fnc002",
+    "servicos_consumidos": [],
+    "total_diarias": 250,
+    "total_servicos": 0,
+    "total_geral": 250
+  }
+]
